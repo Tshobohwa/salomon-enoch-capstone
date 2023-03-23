@@ -9,7 +9,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   background-image: url("images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +72,94 @@ body {
   font-size: 1.2rem;
 }
 
+.pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding: 3rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.pop-up__containt {
+  width: 50%;
+  border: solid 2px #d3d3d3;
+  padding: 1rem;
+  background-color: black;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.pop-up__containt p {
+  color: #d3d3d3;
+}
+
+.pop-up__containt::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.pop-up__header {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.close-popup {
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: right;
+  border: none;
+}
+
+.show-infos {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+}
+
+.pop-up__footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comment-name {
+  color: red;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-input {
+  background-color: transparent;
+  color: white;
+  border: solid 1px #fff;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.form-button {
+  background-color: red;
+  border: solid 1px #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
 @media screen and (min-width: 450px) {
   .shows-container {
     grid-template-columns: 1fr 1fr;
@@ -81,6 +169,11 @@ body {
 @media screen and (min-width: 768px) {
   .shows-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .show-infos,
+  .pop-up__footer {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

@@ -1,30 +1,23 @@
-import { renderShow } from './DOM.js';
+import { renderShow, showPopupShow } from './DOM.js';
 
-export const shows = [];
+export const showsAPIUrl = 'https://api.tvmaze.com/shows';
 
 export const getShows = async () => {
-  const response = await fetch(
-    `https://api.tvmaze.com/shows/${shows.length + 51}`,
-  );
+  const response = await fetch(showsAPIUrl);
   if (!response.ok) return;
+  const shows = await response.json();
+  shows.forEach((show) => {
+    renderShow(show);
+  });
+};
 
+export const getOneShow = async (showId) => {
+  const response = await fetch(`${showsAPIUrl}/${showId}`);
+  if (!response.ok) return;
   const show = await response.json();
-  shows.push({
-    id: show.id,
-    name: show.name,
-    image: show.image.medium,
-    likes: 0,
-    comments: 0,
-  });
-  renderShow({
-    id: show.id,
-    name: show.name,
-    image: show.image.medium,
-    likes: 0,
-    comments: 0,
-  });
-
-  if (shows.length < 20) getShows();
+  showPopupShow(show);
+  // eslint-disable-next-line consistent-return
+  return show;
 };
 
 getShows();
