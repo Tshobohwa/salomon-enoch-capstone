@@ -1,7 +1,7 @@
-import { showPopupShow } from './DOM.js';
-import { getOneShowLikes } from './likes.js';
+import { displayPopup } from "./DOM.js";
+import { getOneShowLikes } from "./likes.js";
 
-export const showsAPIUrl = 'https://api.tvmaze.com/shows';
+export const showsAPIUrl = "https://api.tvmaze.com/shows";
 
 export const getShows = async () => {
   const response = await fetch(showsAPIUrl);
@@ -12,9 +12,16 @@ export const getShows = async () => {
   });
 };
 
+export const showPopupShow = async (showId) => {
+  const response = await fetch(`${showsAPIUrl}/${showId}`);
+  if (!response.ok) return;
+  const show = await response.json();
+  displayPopup(show);
+};
+
 export const getOneShow = async (showId) => {
   const response = await fetch(`${showsAPIUrl}/${showId}`);
   if (!response.ok) return;
   const show = await response.json();
-  showPopupShow(show);
+  return show;
 };
