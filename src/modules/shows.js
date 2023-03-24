@@ -1,4 +1,5 @@
-import { renderShow, showPopupShow } from './DOM.js';
+import { showPopupShow } from './DOM.js';
+import { getOneShowLikes } from './likes.js';
 
 export const showsAPIUrl = 'https://api.tvmaze.com/shows';
 
@@ -7,7 +8,7 @@ export const getShows = async () => {
   if (!response.ok) return;
   const shows = await response.json();
   shows.forEach((show) => {
-    renderShow(show);
+    getOneShowLikes(show);
   });
 };
 
@@ -16,8 +17,4 @@ export const getOneShow = async (showId) => {
   if (!response.ok) return;
   const show = await response.json();
   showPopupShow(show);
-  // eslint-disable-next-line consistent-return
-  return show;
 };
-
-getShows();

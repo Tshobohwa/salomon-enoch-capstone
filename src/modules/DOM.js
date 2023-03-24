@@ -1,5 +1,6 @@
-export const showsContainer = document.querySelector('.shows-container');
+const showsContainer = document.querySelector('.shows-container');
 const popupContainer = document.querySelector('.pop-up');
+
 export const renderShow = (show) => {
   showsContainer.insertAdjacentHTML(
     'beforeend',
@@ -66,3 +67,9 @@ export const showPopupShow = (show) => {
   );
   popupContainer.classList.remove('hidden');
 };
+
+// export const updateshowLikes = async (showId) => {
+//   const showCard = document.querySelector(`#show-${showId}`);
+//   const showLikes = showCard.querySelector(".likes");
+//   showLikes.innerHTML = await shows.find((show) => show.id === showId);
+// };
