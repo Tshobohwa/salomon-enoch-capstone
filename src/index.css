@@ -15,6 +15,38 @@ body {
   background-size: cover;
 }
 
+/* Header styling */
+
+.nav-bars {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 10rem;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  font-size: 23px;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+span {
+  color: rgba(235, 54, 54, 0.722);
+}
+
+.shows-list {
+  text-align: center;
+  font-size: 40px;
+  margin: 2rem 0;
+}
+
+/* Header styling */
+
 .shows-container {
   display: grid;
   grid-template-columns: 1fr;
