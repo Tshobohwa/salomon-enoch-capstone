@@ -13,7 +13,6 @@ body {
   background-image: url("images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 1rem;
 }
 
 /* Header styling */
@@ -53,6 +52,7 @@ span {
   grid-template-columns: 1fr;
   row-gap: 2rem;
   column-gap: 2rem;
+  padding: 1rem;
 }
 
 .show-card {
@@ -190,6 +190,22 @@ span {
   border: solid 1px #fff;
   border-radius: 0.5rem;
   padding: 0.5rem;
+}
+
+.page-footer {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+}
+
+.page-footer h3 {
+  color: #000;
+}
+
+.page-footer a {
+  color: #5a5a5a;
 }
 
 @media screen and (min-width: 450px) {
