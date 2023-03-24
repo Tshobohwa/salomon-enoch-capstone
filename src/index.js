@@ -1,8 +1,8 @@
 import "./index.css";
 
-import { displayPopup, hiddePopupShow } from "./modules/DOM.js";
-import { likeShow } from "./modules/likes";
-import { getShows } from "./modules/shows.js";
+import { hiddePopupShow } from "./modules/DOM.js";
+import likeShow from "./modules/newLike.js";
+import { getShows, showPopupShow } from "./modules/shows.js";
 
 getShows();
 
@@ -14,7 +14,7 @@ document.addEventListener("click", (e) => {
   ) {
     const showCard = e.target.closest(".show-card");
     const showId = +showCard.id.split("-")[1];
-    displayPopup(showId);
+    showPopupShow(showId);
   }
 
   // Hidde the popup

@@ -18,10 +18,3 @@ export const showPopupShow = async (showId) => {
   const show = await response.json();
   displayPopup(show);
 };
-
-export const getOneShow = async (showId) => {
-  const response = await fetch(`${showsAPIUrl}/${showId}`);
-  if (!response.ok) return;
-  const show = await response.json();
-  return show;
-};

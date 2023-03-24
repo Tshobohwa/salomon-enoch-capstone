@@ -1,6 +1,8 @@
 const showsContainer = document.querySelector(".shows-container");
 const popupContainer = document.querySelector(".pop-up");
 
+let popup = false;
+
 export const renderShow = (show) => {
   showsContainer.insertAdjacentHTML(
     "beforeend",
@@ -27,12 +29,14 @@ export const renderShow = (show) => {
 export const hiddePopupShow = () => {
   popupContainer.innerHTML = "";
   popupContainer.classList.add("hidden");
+  popup = false;
 };
 
 export const displayPopup = (show) => {
-  popupContainer.insertAdjacentHTML(
-    "beforeend",
-    `<div class="pop-up__containt">
+  if (!popup) {
+    popupContainer.insertAdjacentHTML(
+      "beforeend",
+      `<div class="pop-up__containt">
           <div class="pop-up__header">
               <button class="close-popup">&times;</button>
           </div>
@@ -64,8 +68,10 @@ export const displayPopup = (show) => {
               </form>
           </footer>
       </div>`
-  );
-  popupContainer.classList.remove("hidden");
+    );
+    popup = true;
+    popupContainer.classList.remove("hidden");
+  }
 };
 
 export const updateShow = (showId, showLikes) => {
