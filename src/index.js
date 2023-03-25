@@ -1,4 +1,5 @@
 import './index.css';
+import { addNewComment, getShowComments } from './modules/comments.js';
 
 import { hiddePopupShow } from './modules/DOM.js';
 import likeShow from './modules/newLike.js';
@@ -15,6 +16,7 @@ document.addEventListener('click', (e) => {
     const showCard = e.target.closest('.show-card');
     const showId = +showCard.id.split('-')[1];
     showPopupShow(showId);
+    getShowComments(showId);
   }
 
   // Hidde the popup
@@ -33,5 +35,17 @@ document.addEventListener('click', (e) => {
     const showCard = e.target.closest('.show-card');
     const showId = +showCard.id.split('-')[1];
     likeShow(showId);
+  }
+  // Add new comment
+  if (e.target.classList.contains('form-button')) {
+    e.preventDefault();
+    const nameInput = e.target.parentNode.querySelector('#form-name');
+    const commentInput = e.target.parentNode.querySelector('#form-comment');
+    const showId = +e.target.closest('.pop-up__containt').id.split('-')[1];
+    const name = nameInput.value;
+    const comment = commentInput.value;
+    addNewComment(showId, name, comment);
+    nameInput.value = '';
+    commentInput.value = '';
   }
 });

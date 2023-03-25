@@ -37,7 +37,7 @@ export const displayPopup = (show) => {
   if (!popup) {
     popupContainer.insertAdjacentHTML(
       'beforeend',
-      `<div class="pop-up__containt">
+      `<div class="pop-up__containt" id="popup-${show.id}">
           <div class="pop-up__header">
               <button class="close-popup">&times;</button>
           </div>
@@ -55,16 +55,16 @@ export const displayPopup = (show) => {
           </div>
           <p class="show-summary">${show.summary}</p>
           <footer class="pop-up__footer">
-              <div class="popup-comments-container">
-                  <h3 class="from-title">Comments:</h3>
+              <div class="popup-comments-container" id="show-comments-${show.id}">
+                  <h3 class="from-title comment-number">Comments: (0) </h3>
               </div>
               <form action="" class="comment-form">
                   <h3 class="from-title">
                       Add new comment:
                   </h3>
-                  <input type="text" placeholder="Enter your name" class="form-input" id="form-name">
-                  <textarea name="pop-comment" id="" cols="20" rows="5" placeholder="Add your commment"
-                      class="form-input" id="form-comment"></textarea>
+                  <input type="text" placeholder="Enter your name" class="form-input" id="form-name" required>
+                  <textarea name="pop-comment" cols="20" rows="5" placeholder="Add your commment"
+                      class="form-input" id="form-comment" required></textarea>
                   <button class="form-button" type="submit">Comment</button>
               </form>
           </footer>
@@ -78,4 +78,20 @@ export const displayPopup = (show) => {
 export const updateShow = (showId, showLikes) => {
   const showCard = document.querySelector(`#show-${showId}`);
   showCard.querySelector('.likes').innerHTML = showLikes;
+};
+
+export const displayShowComments = (showsCommments, commentContainer) => {
+  commentContainer.innerHTML = `<h3 class="from-title comment-number">Comments: (${showsCommments.length}) </h3>`;
+  showsCommments.forEach((comment) => {
+    commentContainer.insertAdjacentHTML(
+      'beforeend',
+      `
+        <article>
+            <h4 class="comment-name">${comment.username} </h4>
+            <small>${comment.creation_date}</small>
+            <p>${comment.comment} </p>
+        </article>
+    `,
+    );
+  });
 };
