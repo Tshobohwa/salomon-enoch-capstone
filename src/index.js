@@ -1,7 +1,8 @@
 import './index.css';
 import { addNewComment, getShowComments } from './modules/comments.js';
+import countShows from './modules/countItems.js';
 
-import { hiddePopupShow } from './modules/DOM.js';
+import { hiddePopupShow, moviesNumber } from './modules/DOM.js';
 import likeShow from './modules/newLike.js';
 import { getShows, showPopupShow } from './modules/shows.js';
 
@@ -47,5 +48,11 @@ document.addEventListener('click', (e) => {
     addNewComment(showId, name, comment);
     nameInput.value = '';
     commentInput.value = '';
+  }
+});
+
+document.addEventListener('readystatechange', () => {
+  if (document.readyState === 'complete') {
+    moviesNumber.innerHTML = countShows();
   }
 });

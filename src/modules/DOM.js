@@ -1,14 +1,22 @@
-const showsContainer = document.querySelector('.shows-container');
+import countComments from './countComments.js';
+import countShows from './countItems.js';
+
+export const showsContainer = document.querySelector('.shows-container');
 const popupContainer = document.querySelector('.pop-up');
 export const moviesNumber = document.querySelector('.movies-number');
 
 let popup = false;
 
 export const renderShow = (show) => {
-  showsContainer.insertAdjacentHTML(
-    'beforeend',
-    `<div class="show-card" id="show-${show.id}">
-            <div class="show-image__container">
+  const showCard = document.createElement('div');
+  showCard.setAttribute('class', 'show-card');
+  showCard.id = `show-${show.id}`;
+  showsContainer.insertAdjacentElement('beforeend', showCard);
+  moviesNumber.innerHTML = countShows();
+};
+
+export const setShowCardInnerHtml = (showCard, show) => {
+  showCard.innerHTML = `  <div class="show-image__container">
                 <img src="${show.image.medium}" alt="${show.name} cover image" class="show-image">
             </div>
             <p class="show-name">${show.name}
@@ -20,11 +28,9 @@ export const renderShow = (show) => {
                 </button>
                 <button class="comment-button">
                     <i class="fa-regular fa-comment icon"></i>
-                    <p class="comments">${show.comments}</p>
                 </button>
-            </div>
-        </div>`,
-  );
+ </div>
+`;
 };
 
 export const hiddePopupShow = () => {
@@ -81,17 +87,19 @@ export const updateShow = (showId, showLikes) => {
 };
 
 export const displayShowComments = (showsCommments, commentContainer) => {
-  commentContainer.innerHTML = `<h3 class="from-title comment-number">Comments: (${showsCommments.length}) </h3>`;
+  commentContainer.innerHTML = '<h3 class="from-title comment-number">Comments: (0) </h3>';
+  const commentsNumber = commentContainer.querySelector('.comment-number');
   showsCommments.forEach((comment) => {
-    commentContainer.insertAdjacentHTML(
-      'beforeend',
-      `
-        <article>
+    const commentElement = document.createElement('article');
+    commentElement.setAttribute('class', 'comment');
+    commentsNumber.innerHTML = `Comments: ${
+      countComments(commentContainer) + 1
+    }`;
+    commentElement.innerHTML = `
             <h4 class="comment-name">${comment.username} </h4>
             <small>${comment.creation_date}</small>
             <p>${comment.comment} </p>
-        </article>
-    `,
-    );
+        `;
+    commentContainer.insertAdjacentElement('beforeend', commentElement);
   });
 };
