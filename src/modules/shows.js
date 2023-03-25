@@ -1,7 +1,7 @@
-import countShows from './countItems.js';
-import { moviesNumber, showPopupShow } from './DOM.js';
+import countShows from "./countItems.js";
+import { moviesNumber, showPopupShow } from "./DOM.js";
 
-export const showsAPIUrl = 'https://api.tvmaze.com/shows';
+export const showsAPIUrl = "https://api.tvmaze.com/shows";
 
 export const getShows = async () => {
   const response = await fetch(showsAPIUrl);
