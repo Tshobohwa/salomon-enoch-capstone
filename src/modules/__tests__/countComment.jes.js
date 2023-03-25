@@ -1,5 +1,3 @@
-const countComments = require('../countComments');
-
 const churchMemebers = [
   'John',
   'Jame',
@@ -10,7 +8,7 @@ const churchMemebers = [
 
 test('the church members has Peter on it', () => {
   expect(churchMemebers).toContain('Peter');
-  expect(churchMemebers).not.toContain('Sarah')
+  expect(churchMemebers).not.toContain('Sarah');
 });
 
 const object = [
