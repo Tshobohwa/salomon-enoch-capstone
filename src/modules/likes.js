@@ -1,4 +1,5 @@
 import { renderShow } from './DOM.js';
+// import { getOneShow } from './shows.js';
 
 export const getshowLikes = async () => {
   const response = await fetch(
