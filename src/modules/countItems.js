@@ -1,3 +1,3 @@
-const countShows = (shows) => shows.length;
+const countShows = () => document.querySelectorAll('.show-card').length;
 
 export default countShows;

@@ -1,4 +1,4 @@
-import { renderShow } from './DOM.js';
+import { renderShow, setShowCardInnerHtml } from './DOM.js';
 // import { getOneShow } from './shows.js';
 
 export const getshowLikes = async () => {
@@ -16,4 +16,6 @@ export const getOneShowLikes = async (show) => {
   const allShowsLikes = await getshowLikes();
   show.likes = allShowsLikes.find((show) => show.item_id === showId)?.likes || 0;
   renderShow(show);
+  const showCard = document.querySelector(`#show-${show.id}`);
+  setShowCardInnerHtml(showCard, show);
 };
