@@ -1,5 +1,6 @@
 const showsContainer = document.querySelector('.shows-container');
 const popupContainer = document.querySelector('.pop-up');
+export const moviesNumber = document.querySelector('.movies-number');
 
 let popup = false;
 
