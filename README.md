@@ -52,7 +52,9 @@ You can use **TV Show** web app to see all your favorites TV shows information a
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://anthonymr.github.io/js-capstone/dist/)
+- [Live Demo](https://tshobohwa.github.io/salomon-enoch-capstone/dist)
+
+- [Video Link] (https://drive.google.com/file/d/1RrMGEOZkrY_UWzODJuSWw71WbVitH7ul/view?usp=share_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
