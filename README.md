@@ -44,7 +44,6 @@ You can use **TV Show** web app to see all your favorites TV shows information a
 ### Key Features <a name="key-features"></a>
 
 - **List main TV shows information and schedule**
-- **You can like a TV show**
 - **You can add comments to a TV show**
 - **You can read comments from other users**
 
