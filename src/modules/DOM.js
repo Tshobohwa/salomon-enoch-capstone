@@ -1,11 +1,12 @@
-const showsContainer = document.querySelector(".shows-container");
-const popupContainer = document.querySelector(".pop-up");
+const showsContainer = document.querySelector('.shows-container');
+const popupContainer = document.querySelector('.pop-up');
+export const moviesNumber = document.querySelector('.movies-number');
 
 let popup = false;
 
 export const renderShow = (show) => {
   showsContainer.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     `<div class="show-card" id="show-${show.id}">
             <div class="show-image__container">
                 <img src="${show.image.medium}" alt="${show.name} cover image" class="show-image">
@@ -22,20 +23,20 @@ export const renderShow = (show) => {
                     <p class="comments">${show.comments}</p>
                 </button>
             </div>
-        </div>`
+        </div>`,
   );
 };
 
 export const hiddePopupShow = () => {
-  popupContainer.innerHTML = "";
-  popupContainer.classList.add("hidden");
+  popupContainer.innerHTML = '';
+  popupContainer.classList.add('hidden');
   popup = false;
 };
 
 export const displayPopup = (show) => {
   if (!popup) {
     popupContainer.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `<div class="pop-up__containt">
           <div class="pop-up__header">
               <button class="close-popup">&times;</button>
@@ -67,14 +68,14 @@ export const displayPopup = (show) => {
                   <button class="form-button" type="submit">Comment</button>
               </form>
           </footer>
-      </div>`
+      </div>`,
     );
     popup = true;
-    popupContainer.classList.remove("hidden");
+    popupContainer.classList.remove('hidden');
   }
 };
 
 export const updateShow = (showId, showLikes) => {
   const showCard = document.querySelector(`#show-${showId}`);
-  showCard.querySelector(".likes").innerHTML = showLikes;
+  showCard.querySelector('.likes').innerHTML = showLikes;
 };
