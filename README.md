@@ -25,7 +25,7 @@
 
 # 📖 TV Show <a name="about-project"></a>
 
-You can use **TV Show** web app to see all your favorites TV shows information and schedules.
+You can use the **TV Show** web app to see all your favorite TV show's information and schedules.
 
 ## 🛠 Built With <a name="built-with"></a>
 
