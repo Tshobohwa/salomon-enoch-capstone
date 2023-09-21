@@ -65,7 +65,7 @@ You can use the **TV Show** web app to see all your favorite TV show's informati
 
 ### Prerequisites
 
-In order to run this project you need: a properly working pc or laptop and a modern web browser.
+In order to run this project you need a properly working pc or laptop and a modern web browser.
 
 ### Setup
 
@@ -101,7 +101,7 @@ To run tests, run the following commands:
 
 ### Deployment
 
-To deply, please run the following commands: 
+To deploy, please run the following commands: 
 
 ```sh
   cd my-folder
@@ -154,7 +154,7 @@ If you like this project, please, share it with your friends.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank to [tvmaze.com](https://www.tvmaze.com/) for provide us the API used in this project. And special thanks to Microvers team for provide us the API used to store likes and comments.
+We would like to thank [tvmaze.com](https://www.tvmaze.com/) for providing us with the API used in this project. And special thanks to the Microverse team for providing us with the API used to store likes and comments.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
