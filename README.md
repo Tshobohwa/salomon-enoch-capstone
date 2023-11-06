@@ -37,7 +37,7 @@ You can use the **TV Show** web app to see all your favorite TV show's informati
     <li><a href="https://html.com/">HTML</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
-    <li><a href="https://webpack.js.org/">WebPack</a></li>
+    <li><a href="https://webpack.js.org/">Webpack</a></li>
   </ul>
 </details>
 
