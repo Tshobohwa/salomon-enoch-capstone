@@ -65,7 +65,7 @@ You can use the **TV Show** web app to see all your favorite TV show's informati
 
 ### Prerequisites
 
-To run this project you need a properly working pc or laptop and a modern web browser.
+To run this project you need a properly working PC or laptop and a modern web browser.
 
 ### Setup
 
