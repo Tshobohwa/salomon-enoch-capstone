@@ -161,6 +161,7 @@ We would like to thank [tvmaze.com](https://www.tvmaze.com/) for providing us wi
 
 ## 📝 License <a name="license"></a>
 
+
 This project is [MIT](MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
